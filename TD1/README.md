@@ -32,7 +32,7 @@ Accélération : Jiiiiiiiiionnnnnn !
 $ java CarAppV2 Subaru
 Plein de la Subaru effectué.
 Klaxon : Turlututu !
-Accélération : VRRRRRRROUMMMMMMMMMM !
+Accélération : ZRRRRRRROUMMMMMMMMMM !
 ```
 
 Exercice 2 : Feu tricolore
