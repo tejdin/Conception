@@ -1,0 +1,13 @@
+@startuml
+
+class feuPieton{
++ etat : String
++ Couleur : String
++ ChangeCouleur() : void
++ ChangeEtat() : void
++ getEtat() : String
++ getCouleur() : String
+
+
+}
+@enduml
