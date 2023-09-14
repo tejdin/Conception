@@ -1,0 +1,48 @@
+@startuml
+class Main {
+    +main(args: String[]): void
+}
+
+interface car{
+    +refuel(): void
+    +hank(): void
+    +speedUp(): void
+    +hank(): void
+    }
+    class jeep implements car{
+    +fuel : int
+    +speed : int
+    +hank : String
++refuel(): void
++hank(): void
++speedUp(): void
+
+    }
+    class subaru implements car{
+    +fuel : int
+    +speed : int
+    +hank : String
++refuel(): void
++speedUp(): void
++hank(): void
+    }
+    class fiatMultipla implements car{
+    +fuel : int
+    +speed : int
+    +hank : String
++refuel(): void
++speedUp(): void
++hank(): void
+    }
+
+    class carFactory{
+    +createCar(carName: String ): car
+    }
+    carFactory --> jeep
+    carFactory --> subaru
+    carFactory --> fiatMultipla
+    carFactory --> car:use
+
+    Main --> carFactory
+
+@enduml
