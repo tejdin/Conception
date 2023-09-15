@@ -14,16 +14,16 @@ class feuPieton{
 }
 
 interface strategy{
-+ ChangeCouleur() : void
++ ChangeCouleur(color : Couleur) : void
 }
 
 class startegyGermany implements strategy{
-+ ChangeCouleur(color : Couleur) : void
++ ChangeCouleur(color : Couleur) : Couleur
 }
 
 
 class startegyFrance implements strategy{
-+ ChangeCouleur(color : Couleur) : void
++ ChangeCouleur(color : Couleur) : Couleur
 }
 
 enum Couleur{
@@ -34,8 +34,9 @@ enum Couleur{
 
 
 feuPieton *-- strategy
-feuPieton *-- Couleur
+feuPieton *-- Couleur : + Color
 main --> feuPieton
+startegyGermany *-- Couleur : + CouleurAvantOrange
 
 
 @enduml

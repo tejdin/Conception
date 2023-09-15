@@ -1,15 +1,17 @@
-package cars;
+package cars.Feu;
 
 public class FeuApp {
     public static void main(String[] args) {
-        Feu feu = new Feu();
+
+        Strategy strategy = new StrategyDE();
+        Feu feu = new Feu(strategy);
         System.out.println("Le feu est " + feu.getEtat() );
         feu.changeEtat();
         System.out.println("Le feu est " + feu.getEtat() );
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             feu.changeCouleur();
-            System.out.println("Le feu est " + feu.getCouleur() );
+             System.out.println("Le feu est " + feu.getCouleur() );
         }
     }
 }

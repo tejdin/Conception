@@ -1,10 +1,19 @@
-package cars;
+package cars.Feu;
+
 
 import javax.swing.plaf.PanelUI;
 
 public class Feu {
-    public String couleur = "rouge";
+    public Color couleur = Color.RED;
+
+    Strategy strategy;
     public String etat = "eteint";
+
+    public Feu(Strategy strategy) {
+        this.strategy = strategy;
+    }
+
+
 
     public void changeEtat() {
         if (etat == "eteint") {
@@ -14,19 +23,12 @@ public class Feu {
         }
     }
     public void changeCouleur() {
-        if (couleur == "rouge") {
-            couleur = "vert";
-        }
-        else if (couleur == "vert") {
-            couleur = "orange";
-        }
-        else {
-            couleur = "rouge";
-        }
+        couleur = strategy.changeCouleur(couleur);
+
     }
 
     public String getCouleur() {
-        return couleur;
+        return couleur.toString();
     }
 
     public String getEtat() {
