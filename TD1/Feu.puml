@@ -10,4 +10,19 @@ class feuPieton{
 
 
 }
+
+interface strategy{
++ ChangeCouleur() : void
+}
+
+class startegyGermany implements strategy{
++ ChangeCouleur() : void
+}
+
+class startegyFrance implements strategy{
++ ChangeCouleur() : void
+}
+
+feuPieton *-- strategy
+
 @enduml
