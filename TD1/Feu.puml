@@ -1,14 +1,16 @@
 @startuml
 
+class main {
+    + main() : void
+}
+
+
 class feuPieton{
 + etat : String
-+ Couleur : String
 + ChangeCouleur() : void
 + ChangeEtat() : void
 + getEtat() : String
 + getCouleur() : String
-
-
 }
 
 interface strategy{
@@ -16,13 +18,24 @@ interface strategy{
 }
 
 class startegyGermany implements strategy{
-+ ChangeCouleur() : void
++ ChangeCouleur(color : Couleur) : void
 }
+
 
 class startegyFrance implements strategy{
-+ ChangeCouleur() : void
++ ChangeCouleur(color : Couleur) : void
 }
 
+enum Couleur{
+    Vert
+    Rouge
+    Orange
+}
+
+
 feuPieton *-- strategy
+feuPieton *-- Couleur
+main --> feuPieton
+
 
 @enduml
