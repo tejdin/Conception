@@ -23,7 +23,7 @@ Vous avez très certainement une gestion de l'affichage du texte au niveau du fe
 Pour anticiper la mise en place d'une interface graphique, nous souhaitons déléguer la gestion de l'affichage de l'état du feu à une ou plusieurs classes dédiées.
 
 5. Y aurait-il un Design Pattern adapté à cette problématique ?
-6. Quelle que soit la réponse à la question précédente, proposez une mise à jour de votre modélisation UML avec de Design Pattern.
+6. Quelle que soit la réponse à la question précédente, proposez une mise à jour de votre modélisation UML avec ce Design Pattern.
 7. Implémentez cette modélisation et adaptez le reste de votre code en conséquence.
 
 Exercice 2 : Cars 2
