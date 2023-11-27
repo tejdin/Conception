@@ -21,6 +21,10 @@ Ensuite, pour utiliser de votre dépôt, regardez la page [HOWTO.md](HOWTO.md).
 
 - [Les QCM](https://moodle.unistra.fr/course/view.php?id=737)
 
+#### Projet Mastermind
+
+- [Le dépôt Gitlab](https://git.unistra.fr/a313/a31-mastermind)
+
 
 1 - Créer un **clône distant** sur Gitlab
 -----------------------------------------
