@@ -12,13 +12,18 @@ Ensuite, pour utiliser de votre dépôt, regardez la page [HOWTO.md](HOWTO.md).
 #### Les diapos des cours :
 
 - [CM n°1 : Principes et patrons de conception](http://adrien.krahenbuhl.fr/courses/IUTRS/A31/CM1/)
-- [CM n°2 : Patrons de structure du GoF](http://adrien.krahenbuhl.fr/courses/IUTRS/A31/CM2/)
-- [CM n°3 : Modèle-Vue-Contrôleur](http://adrien.krahenbuhl.fr/courses/IUTRS/A31/CM3/)
-- [CM n°4 : Java Swing](http://adrien.krahenbuhl.fr/courses/IUTRS/A31/CM4/)
+- [CM n°2 : Observer & MVC](http://adrien.krahenbuhl.fr/courses/IUTRS/A31/CM2/)
+- [CM n°3 : Java Swing](http://adrien.krahenbuhl.fr/courses/IUTRS/A31/CM3/)
+- [CM n°4 : Facade, Decorator & Composite](http://adrien.krahenbuhl.fr/courses/IUTRS/A31/CM4/)
+- [CM n°5 : Utilisation avancée de Git](http://adrien.krahenbuhl.fr/courses/IUTRS/A31/CM5/)
 
 #### Moodle
 
 - [Les QCM](https://moodle.unistra.fr/course/view.php?id=737)
+
+#### Projet Mastermind
+
+- [Le dépôt Gitlab](https://git.unistra.fr/a313/a31-mastermind)
 
 
 1 - Créer un **clône distant** sur Gitlab
