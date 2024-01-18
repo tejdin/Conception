@@ -10,4 +10,145 @@ class AuBrasseur {
 	+ {static} main(args : String[])
 }
 
+package models{
+
+
+abstract class bierre {
+    -nom : string
+    -prix : float
+    +bierre(nom : string, prix :type: typeBierre)
+    +getNom() : string
+    +getPrix() : float
+}
+
+abstract class tarteflambee {
+    -nom : string
+    -prix : float
+    +tarteflambee(nom : string, prix : float)
+    +getNom() : string
+    +getPrix() : float
+}
+
+enum typeBierre {
+    sansAlcool
+    avecAlcool
+}
+bierre *--> typeBierre : -  typeBierre
+
+class bierresansAlcool extends bierre {
+    +bierresansAlcool(nom : string, prix : float ,type : typeBierre)
+}
+
+class indianPale extends bierre {
+    +bierreavecAlcool(nom : string, prix : float,type : typeBierre))
+}
+
+class tarteflambeeauMunster extends tarteflambee {
+    +tarteflambeeauMunster(nom : string, prix : float)
+}
+
+class tarteflambeeTraditionnelle extends tarteflambee {
+    +tarteflambeeauMunster(nom : string, prix : float)
+}
+
+class tarteflambeeHawai extends tarteflambee {
+    +tarteflambeeauMunster(nom : string, prix : float)
+}
+
+class fabriqueBierre {
+    +fabriqueBierre()
+    +creerBierre(nom : string) : bierre
+}
+
+class fabriqueTarteflambee {
+    +fabriqueTarteflambee()
+    +creerTarteflambee(nom : string) : tarteflambee
+}
+fabriqueBierre --> bierre
+fabriqueTarteflambee --> tarteflambee
+fabriqueBierre ..> bierresansAlcool
+fabriqueBierre ..> indianPale
+fabriqueTarteflambee ..> tarteflambeeauMunster
+fabriqueTarteflambee ..> tarteflambeeTraditionnelle
+fabriqueTarteflambee ..> tarteflambeeHawai
+
+class CashDesk {
+    -bierreMontant : float
+    -tarteflambeeMontant : float
+    +tableEncaisser : integer
+
+    +CashDesk()
+    +addBierre(bierre : string)
+    +addTarteflambee(tarteflambee : string)
+    +getBierreMontant() : float
+    +getTarteflambeeMontant() : float
+    +getTotal() : float
+    +getTarteList() : tarteflambee[]
+    +getBierreList() : bierre[]
+    +clearBierreList()
+    +clearTarteflambeeList()
+    +resetAll()
+    +addObserver(observer : Observer)
+    +notifyObserver()
+}
+
+CashDesk *--> bierre: - bierre[*]
+CashDesk *--> tarteflambee: - tarteflambee[*]
+CashDesk ..> fabriqueBierre
+CashDesk ..> fabriqueTarteflambee
+
+package observer{
+
+interface Observer {
+    +updateMontantBierre()
+    +updateMontantTarteflambee()
+    +updateTotal()
+    +updateTarteList()
+    +updateBierreList()
+
+}
+}
+
+CashDesk *--> Observer: - Observer[*]
+}
+
+package Controller{
+class AuBrasseurController {
+    +CashDeskController( cashDesk : CashDesk)
+    +addBierre(bierre : string)
+    +addTarteflambee(tarteflambee : string)
+    +clearBierreList()
+    +clearTarteflambeeList()
+    +resetAll()
+}
+
+AuBrasseurController o..> CashDesk: - CashDesk
+}
+
+
+package View{
+class AuBrasseurview implements models.observer.Observer {
+    +CashDeskView( cashDesk : CashDesk, cashDeskController : CashDeskController)
+    +updateMontantBierre()
+    +updateMontantTarteflambee()
+    +updateTotal()
+    +updateTarteList()
+    +updateBierreList()
+
+
+}
+
+AuBrasseurview o..> CashDesk: - CashDesk
+AuBrasseurview o..> AuBrasseurController : - CashDeskController
+}
+
+AuBrasseur --> AuBrasseurController
+AuBrasseur --> AuBrasseurview
+AuBrasseur --> CashDesk
+
+
+
+
+
+
 @enduml
