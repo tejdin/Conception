@@ -76,20 +76,21 @@ class CashDesk {
     -bierreMontant : float
     -tarteflambeeMontant : float
     +tableEncaisser : integer
+    -total : float
 
     +CashDesk()
     +addBierre(bierre : string)
     +addTarteflambee(tarteflambee : string)
     +getBierreMontant() : float
     +getTarteflambeeMontant() : float
+    +getTableEncaisser() : integer
     +getTotal() : float
     +getTarteList() : tarteflambee[]
     +getBierreList() : bierre[]
-    +clearBierreList()
-    +clearTarteflambeeList()
     +resetAll()
     +addObserver(observer : Observer)
     +notifyObserver()
+    +encaisser()
 }
 
 CashDesk *--> bierre: - bierre[*]
@@ -100,11 +101,11 @@ CashDesk ..> fabriqueTarteflambee
 package observer{
 
 interface Observer {
-    +updateMontantBierre()
-    +updateMontantTarteflambee()
-    +updateTotal()
-    +updateTarteList()
-    +updateBierreList()
+
+    +updateMontantBierre( total : float)
+    +updateMontantTarteflambee( total : float))
+    +updateTotal( total : float)
+    +updateAffichage( bierreList : bierre[], tarteflambeeList : tarteflambee[])
 
 }
 }
@@ -117,9 +118,8 @@ class AuBrasseurController {
     +CashDeskController( cashDesk : CashDesk)
     +addBierre(bierre : string)
     +addTarteflambee(tarteflambee : string)
-    +clearBierreList()
-    +clearTarteflambeeList()
     +resetAll()
+    +encaisser()
 }
 
 AuBrasseurController o..> CashDesk: - CashDesk
@@ -129,11 +129,11 @@ AuBrasseurController o..> CashDesk: - CashDesk
 package View{
 class AuBrasseurview implements models.observer.Observer {
     +CashDeskView( cashDesk : CashDesk, cashDeskController : CashDeskController)
-    +updateMontantBierre()
-    +updateMontantTarteflambee()
-    +updateTotal()
-    +updateTarteList()
-    +updateBierreList()
+    +updateMontantBierre( total : float)
+    +updateMontantTarteflambee( total : float))
+    +updateTotal( total : float)
+    +updateAffichage( bierreList : bierre[], tarteflambeeList : tarteflambee[])
+
 
 
 }

@@ -1,16 +1,20 @@
 package aubrasseur;
 
-import controller.AuBrasseurController;
-import model.CashDesk;
-import view.AuBrasseurWindow;
+import aubrasseur.Controllers.AuBrasseurControlleur;
+import aubrasseur.Models.CashDesk;
+import aubrasseur.views.AuBrasseurWindow;
 
 public class AuBrasseur {
 
 	public static void main(String[] args) {
+
+
 		CashDesk model = new CashDesk();
-		AuBrasseurController controller = new AuBrasseurController(model);
+		AuBrasseurControlleur controller = new AuBrasseurControlleur(model);
 		AuBrasseurWindow view = new AuBrasseurWindow(model,controller);
 		model.addObserver(view);
+
+
 	}
 
 }

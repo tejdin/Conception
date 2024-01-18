@@ -1,2 +1,6 @@
-package aubrasseur.Models;public enum TypeBierre {
+package aubrasseur.Models;
+
+public enum TypeBierre {
+    sansAlcool,
+    avecAlcool
 }
